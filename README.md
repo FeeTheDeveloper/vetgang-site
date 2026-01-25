@@ -1,25 +1,52 @@
-# VET GANG — Cinematic Airspace (Initial Scaffold)
+# VET GANG — Airspace Guard (Next.js App Router)
 
-This repo is the **Phase 1 foundation** for the VET GANG flagship website:
-- Next.js App Router (Vercel-safe)
-- TailwindCSS
-- Framer Motion (UI only)
-- WebGL background via @react-three/fiber (storm clouds + patrol + jumpers)
+A Vercel-safe, cinematic WebGL flagship site for VET GANG using Next.js App Router, TailwindCSS, and @react-three/fiber.
 
 ## Quickstart
 
 ```bash
-npm i
+npm install
 npm run dev
 ```
 
-## Build
+## Build + Deploy
 
 ```bash
+npm run lint
 npm run build
 npm run start
 ```
 
+Deploy on Vercel with the default Next.js settings (Node 20+).
+
+## Structure
+
+```
+app/
+  (site)/
+    layout.tsx
+    page.tsx
+    join/page.tsx
+    partners/page.tsx
+    about/page.tsx
+    contact/page.tsx
+components/
+  background/
+    AirspaceBackground.tsx
+    AirspaceCanvas.tsx
+    layers/
+  sections/
+    Hero.tsx
+  ui/
+    Button.tsx
+    Container.tsx
+lib/
+  constants.ts
+  motion.ts
+public/
+  assets/silhouettes/*.svg
+```
+
 ## Notes
-- Background respects `prefers-reduced-motion` and basic device tiering.
-- The WebGL scene is intentionally lightweight and will be upgraded (real silhouettes, better paths, deeper storm shader).
+- Background respects `prefers-reduced-motion` and performance tiers.
+- WebGL loads lazily to protect first paint.

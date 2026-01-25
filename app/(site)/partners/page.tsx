@@ -1,6 +1,28 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import JsonLd from "@/components/seo/JsonLd";
+import { getOrganizationSchema, getWebSiteSchema } from "@/components/seo/schema";
+import { ogImageForTitle, siteName } from "@/lib/seo";
+
+const description =
+  "Partner with Vet Gang to access a verified national network of veteran-owned businesses and strategic collaborators.";
+
+export const metadata: Metadata = {
+  title: "Partners",
+  description,
+  openGraph: {
+    title: `Partners | ${siteName}`,
+    description,
+    images: [{ url: ogImageForTitle("Partners") }],
+  },
+  twitter: {
+    title: `Partners | ${siteName}`,
+    description,
+    images: [ogImageForTitle("Partners")],
+  },
+};
 
 const partnerCards = [
   {
@@ -61,7 +83,10 @@ const partnershipSteps = [
 
 export default function PartnersPage() {
   return (
-    <main className="flex-1">
+    <>
+      <JsonLd data={getOrganizationSchema()} />
+      <JsonLd data={getWebSiteSchema()} />
+      <main className="flex-1">
       <section className="py-section">
         <Container>
           <div className="max-w-2xl space-y-6">
@@ -161,6 +186,7 @@ export default function PartnersPage() {
           </div>
         </Container>
       </section>
-    </main>
+      </main>
+    </>
   );
 }

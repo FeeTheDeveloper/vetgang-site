@@ -1,8 +1,27 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import VerificationSteps from "@/components/sections/VerificationSteps";
 import JoinForm from "@/components/forms/JoinForm";
+import { ogImageForTitle, siteName } from "@/lib/seo";
+
+const description = "Apply to join Vet Gang’s verified veteran-owned business network and partner ecosystem.";
+
+export const metadata: Metadata = {
+  title: "Join",
+  description,
+  openGraph: {
+    title: `Join ${siteName}`,
+    description,
+    images: [{ url: ogImageForTitle("Join") }],
+  },
+  twitter: {
+    title: `Join ${siteName}`,
+    description,
+    images: [ogImageForTitle("Join")],
+  },
+};
 
 const pathOptions = [
   {

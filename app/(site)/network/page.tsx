@@ -1,8 +1,27 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/site/Header";
 import NetworkMap from "@/components/sections/NetworkMap";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import { ogImageForTitle, siteName } from "@/lib/seo";
+
+const description = "Explore the Vet Gang network of verified veteran-owned businesses and mission-aligned partners.";
+
+export const metadata: Metadata = {
+  title: "Network",
+  description,
+  openGraph: {
+    title: `Network | ${siteName}`,
+    description,
+    images: [{ url: ogImageForTitle("Network") }],
+  },
+  twitter: {
+    title: `Network | ${siteName}`,
+    description,
+    images: [ogImageForTitle("Network")],
+  },
+};
 
 const compositionCards = [
   {

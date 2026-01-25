@@ -1,5 +1,26 @@
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import ContactForm from "@/components/forms/ContactForm";
+import JsonLd from "@/components/seo/JsonLd";
+import { getOrganizationSchema, getWebSiteSchema } from "@/components/seo/schema";
+import { ogImageForTitle, siteName } from "@/lib/seo";
+
+const description = "Connect with Vet Gang for partnerships, media, or onboarding support.";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description,
+  openGraph: {
+    title: `Contact ${siteName}`,
+    description,
+    images: [{ url: ogImageForTitle("Contact") }],
+  },
+  twitter: {
+    title: `Contact ${siteName}`,
+    description,
+    images: [ogImageForTitle("Contact")],
+  },
+};
 
 const contactFocus = [
   {
@@ -18,7 +39,10 @@ const contactFocus = [
 
 export default function ContactPage() {
   return (
-    <main className="flex-1">
+    <>
+      <JsonLd data={getOrganizationSchema()} />
+      <JsonLd data={getWebSiteSchema()} />
+      <main className="flex-1">
       <section className="py-section">
         <Container>
           <div className="max-w-2xl space-y-6">
@@ -65,6 +89,7 @@ export default function ContactPage() {
           </div>
         </Container>
       </section>
-    </main>
+      </main>
+    </>
   );
 }

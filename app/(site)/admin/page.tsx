@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import IntakeTable from "@/components/admin/IntakeTable";
+
+export const metadata: Metadata = {
+  title: "Admin",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+  },
+};
 
 export default function AdminPage() {
   return (

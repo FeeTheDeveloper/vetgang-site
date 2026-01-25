@@ -13,7 +13,7 @@ export default function AirspaceBackground() {
 
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden">
-      {tier > 0 && !prefersReducedMotion ? (
+      {tier >= 2 && !prefersReducedMotion ? (
         <AirspaceCanvas tier={tier} />
       ) : (
         <div className="absolute inset-0 bg-ink-950" aria-hidden="true" />

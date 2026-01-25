@@ -3,8 +3,9 @@
 import { shaderMaterial } from "@react-three/drei";
 import { extend, useFrame, useThree } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
-import type { JSX, Ref } from "react";
-import { Color, ShaderMaterial } from "three";
+import type { ReactThreeFiber } from "@react-three/fiber";
+import type { Ref } from "react";
+import { Color, MeshLambertMaterial, ShaderMaterial } from "three";
 import { AIRSPACE_COLORS, MOTION_SPEEDS } from "@/lib/constants";
 
 const CloudMaterial = shaderMaterial(
@@ -78,9 +79,7 @@ type CloudMaterialImpl = ShaderMaterial & {
 
 declare module "@react-three/fiber" {
   interface ThreeElements {
-    cloudMaterial: JSX.IntrinsicElements["shaderMaterial"] & {
-      ref?: Ref<CloudMaterialImpl>;
-    };
+    cloudMaterial: ReactThreeFiber.MaterialNode<CloudMaterialImpl, typeof CloudMaterial>;
   }
 }
 
@@ -109,7 +108,7 @@ export default function CloudLayer({ tier }: { tier: 1 | 2 }) {
   return (
     <mesh scale={planeScale} position={[0, 0, -1]}>
       <planeGeometry args={[1, 1, tier === 2 ? 32 : 16, tier === 2 ? 32 : 16]} />
-      <cloudMaterial ref={materialRef} />
+      <cloudMaterial ref={materialRef as unknown as Ref<MeshLambertMaterial>} />
     </mesh>
   );
 }

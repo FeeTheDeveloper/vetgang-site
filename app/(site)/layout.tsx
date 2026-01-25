@@ -1,4 +1,46 @@
+import type { Metadata } from "next";
 import AirspaceBackground from "@/components/background/AirspaceBackground";
+import {
+  ogImageForTitle,
+  siteDescription,
+  siteKeywords,
+  siteName,
+  siteUrl,
+} from "@/lib/seo";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: siteName,
+    template: `%s | ${siteName}`,
+  },
+  description: siteDescription,
+  keywords: siteKeywords,
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    siteName,
+    title: siteName,
+    description: siteDescription,
+    images: [
+      {
+        url: ogImageForTitle(siteName),
+        width: 1200,
+        height: 630,
+        alt: `${siteName} share image`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description: siteDescription,
+    images: [ogImageForTitle(siteName)],
+  },
+  other: {
+    "og:site_name": siteName,
+  },
+};
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (

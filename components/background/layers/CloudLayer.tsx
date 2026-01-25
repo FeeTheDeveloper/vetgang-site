@@ -46,23 +46,24 @@ const CloudMaterial = shaderMaterial(
 
     float fbm(vec2 p) {
       float value = 0.0;
-      float amplitude = 0.6;
+      float amplitude = 0.7;
       for (int i = 0; i < 4; i++) {
         value += amplitude * noise(p);
-        p *= 2.1;
-        amplitude *= 0.5;
+        p *= 1.85;
+        amplitude *= 0.52;
       }
       return value;
     }
 
     void main() {
-      vec2 uv = vUv * vec2(2.2, 1.2);
-      float drift = uTime * 0.035;
+      vec2 uv = vUv * vec2(1.7, 1.1);
+      float drift = uTime * 0.02;
       float n = fbm(uv + vec2(drift, drift * 0.5));
-      float haze = smoothstep(0.2, 0.85, n);
+      float haze = smoothstep(0.18, 0.82, n);
       vec3 color = mix(uColorA, uColorB, haze);
-      float lightning = uFlicker * smoothstep(0.6, 0.9, n);
-      color += lightning * vec3(0.4, 0.45, 0.7);
+      float storm = smoothstep(0.35, 0.8, n);
+      float lightning = uFlicker * storm;
+      color += lightning * vec3(0.6, 0.7, 1.05);
       gl_FragColor = vec4(color, 0.85);
     }
   `
@@ -93,10 +94,10 @@ export default function CloudLayer({ tier }: { tier: 1 | 2 }) {
     materialRef.current.uTime += delta * MOTION_SPEEDS.clouds;
     const time = state.clock.getElapsedTime();
     if (time > flickerState.current.next) {
-      flickerState.current.value = 0.35 + Math.random() * 0.4;
-      flickerState.current.next = time + 4 + Math.random() * 6;
+      flickerState.current.value = 0.45 + Math.random() * 0.35;
+      flickerState.current.next = time + 8 + Math.random() * 8;
     }
-    flickerState.current.value *= 0.92;
+    flickerState.current.value *= 0.85;
     materialRef.current.uFlicker = flickerState.current.value;
   });
 

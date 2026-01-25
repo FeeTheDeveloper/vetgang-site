@@ -19,7 +19,7 @@ export default function AirspaceBackground() {
         <div className="absolute inset-0 bg-ink-950" aria-hidden="true" />
       )}
       <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-900/90 via-ink-950/40 to-ink-950/95"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-900/75 via-ink-950/45 to-ink-950/98"
         aria-hidden="true"
       />
       <div

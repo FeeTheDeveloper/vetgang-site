@@ -3,12 +3,17 @@
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { AIRSPACE_COLORS } from "@/lib/constants";
+import type { MotionTier } from "@/lib/motion";
 import CloudLayer from "@/components/background/layers/CloudLayer";
 import PatrolLayer from "@/components/background/layers/PatrolLayer";
 import JumpersLayer from "@/components/background/layers/JumpersLayer";
 import EmbersLayer from "@/components/background/layers/EmbersLayer";
 
-export default function AirspaceCanvas({ tier }: { tier: 1 | 2 }) {
+export default function AirspaceCanvas({ tier }: { tier: MotionTier }) {
+  if (tier !== 2) {
+    return null;
+  }
+
   return (
     <Canvas
       className="absolute inset-0"

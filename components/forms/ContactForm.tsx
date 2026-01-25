@@ -7,11 +7,51 @@ const inputStyles =
   "mt-2 w-full rounded-2xl border border-white/10 bg-ink-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
 
 export default function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+    setStatus("loading");
+    setErrorMessage(null);
+
+    const formData = new FormData(event.currentTarget);
+    const name = String(formData.get("name") ?? "");
+    const email = String(formData.get("email") ?? "");
+    const businessName = String(formData.get("organization") ?? "");
+    const topic = String(formData.get("topic") ?? "");
+    const message = String(formData.get("message") ?? "");
+
+    try {
+      const response = await fetch("/api/intake", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "contact",
+          name,
+          email,
+          businessName,
+          role: topic,
+          message,
+          metadata: {
+            topic,
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        const data = (await response.json().catch(() => null)) as { error?: string } | null;
+        throw new Error(data?.error || "Unable to send inquiry.");
+      }
+
+      setStatus("success");
+      event.currentTarget.reset();
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(error instanceof Error ? error.message : "Unable to send inquiry.");
+    }
   };
 
   return (
@@ -90,10 +130,17 @@ export default function ContactForm() {
         />
       </div>
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-        <Button type="submit">Send inquiry</Button>
-        {submitted ? (
+        <Button type="submit" disabled={status === "loading"}>
+          {status === "loading" ? "Sending..." : "Send inquiry"}
+        </Button>
+        {status === "success" ? (
           <p role="status" className="text-sm text-slate-200">
-            Inquiry received. Our team reviews all submissions and will respond with next steps.
+            Received. Verification review pending.
+          </p>
+        ) : null}
+        {status === "error" && errorMessage ? (
+          <p role="status" className="text-sm text-red-200">
+            {errorMessage}
           </p>
         ) : null}
       </div>

@@ -19,6 +19,17 @@ npm run start
 
 Deploy on Vercel with the default Next.js settings (Node 20+).
 
+## Admin Access
+
+The intake pipeline stores submissions in DynamoDB and protects the admin review UI with basic auth. Set the following
+environment variables in Vercel (or your local `.env`):  
+
+- `DDB_TABLE_INTAKE`: DynamoDB table name for intake records.
+- `ADMIN_USER`: Basic auth username for `/admin` and `/api/admin/*`.
+- `ADMIN_PASS`: Basic auth password for `/admin` and `/api/admin/*`.
+- `AWS_REGION` (or `AWS_DEFAULT_REGION`): AWS region for DynamoDB.
+- `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY`: IAM credentials with DynamoDB access.
+
 ## Structure
 
 ```

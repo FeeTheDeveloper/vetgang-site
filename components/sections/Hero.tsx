@@ -22,16 +22,30 @@ const trustItems = [
 ];
 
 export default function Hero() {
+  const launchMode = process.env.NEXT_PUBLIC_LAUNCH_MODE ?? "live";
+  const isPreLaunch = launchMode === "pre";
+
   return (
     <section aria-label="VET GANG hero" className="flex flex-1 items-center py-section lg:py-section-lg">
       <Container>
         <div className="max-w-4xl">
+          {isPreLaunch ? (
+            <motion.p
+              className="text-sm font-semibold uppercase tracking-[0.35em] text-white"
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              custom={0}
+            >
+              Now Accepting Applications
+            </motion.p>
+          ) : null}
           <motion.p
             className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-200"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            custom={0}
+            custom={isPreLaunch ? 0.1 : 0}
           >
             Veteran-Owned Exclusive Network
           </motion.p>
@@ -40,7 +54,7 @@ export default function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            custom={0.1}
+            custom={isPreLaunch ? 0.2 : 0.1}
           >
             VET GANG
           </motion.h1>
@@ -49,7 +63,7 @@ export default function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            custom={0.2}
+            custom={isPreLaunch ? 0.3 : 0.2}
           >
             Force Multiplier
           </motion.p>
@@ -58,7 +72,7 @@ export default function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            custom={0.3}
+            custom={isPreLaunch ? 0.4 : 0.3}
           >
             A unified, verified ecosystem of veteran founders, operators, and partners built for decisive execution and
             trusted collaboration.
@@ -68,21 +82,23 @@ export default function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            custom={0.4}
+            custom={isPreLaunch ? 0.5 : 0.4}
           >
             <Button as={Link} href="/join" aria-label="Join VET GANG">
               Join
             </Button>
-            <Button as={Link} href="/partners" variant="secondary" aria-label="Partner with VET GANG">
-              Partner
-            </Button>
+            {isPreLaunch ? null : (
+              <Button as={Link} href="/partners" variant="secondary" aria-label="Partner with VET GANG">
+                Partner
+              </Button>
+            )}
           </motion.div>
           <motion.div
             className="mt-10 flex flex-wrap items-center gap-3 border-t border-white/10 pt-6"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            custom={0.5}
+            custom={isPreLaunch ? 0.6 : 0.5}
           >
             {trustItems.map((item) => (
               <div

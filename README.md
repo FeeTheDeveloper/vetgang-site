@@ -29,6 +29,21 @@ environment variables in Vercel (or your local `.env`):
 - `ADMIN_PASS`: Basic auth password for `/admin` and `/api/admin/*`.
 - `AWS_REGION` (or `AWS_DEFAULT_REGION`): AWS region for DynamoDB.
 - `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY`: IAM credentials with DynamoDB access.
+- `NEXT_PUBLIC_LAUNCH_MODE`: Set to `pre` for pre-launch messaging, otherwise `live`.
+
+## Launch checklist
+
+- Vercel env vars set (including `NEXT_PUBLIC_LAUNCH_MODE`).
+- AWS permissions verified for intake storage and admin access.
+- Admin credentials confirmed for `/admin`.
+- Intake submissions tested (join + contact).
+- Press assets reviewed and approved.
+
+## Post-launch checklist
+
+- Monitor intake volume and response times.
+- Review the admin dashboard daily.
+- Respond to partner inquiries within 24-48 hours.
 
 ## Structure
 

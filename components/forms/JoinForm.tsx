@@ -14,10 +14,11 @@ export default function JoinForm() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const form = event.currentTarget;
     setStatus("loading");
     setErrorMessage(null);
 
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     const name = String(formData.get("name") ?? "");
     const email = String(formData.get("email") ?? "");
     const company = String(formData.get("business") ?? "");
@@ -47,7 +48,7 @@ export default function JoinForm() {
       }
 
       setStatus("success");
-      event.currentTarget.reset();
+      form.reset();
     } catch (error) {
       setStatus("error");
       setErrorMessage(error instanceof Error ? error.message : "Unable to submit application.");

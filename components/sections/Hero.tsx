@@ -14,16 +14,16 @@ export default function Hero() {
           <div className="relative max-w-3xl space-y-6">
             <p className="text-xs font-semibold uppercase tracking-[0.42em] text-army-khaki">Veteran-Owned National Movement</p>
             <h1 className="text-display-xl font-semibold tracking-tight text-white sm:text-display-2xl">
-              Elite network infrastructure for trusted veteran execution.
+              The flagship network for disciplined veteran-led execution.
             </h1>
             <p className="max-w-2xl text-body-lg text-white/85">
-              Vet Gang is the flagship network for verified veteran-owned businesses, mission-aligned partners, and
-              operators who deliver under pressure. Built for credibility. Designed for scale.
+              Vet Gang connects verified veteran-owned businesses, trusted operators, and mission-aligned partners in one
+              elite ecosystem designed to reduce friction and accelerate outcomes.
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
               <Button as={Link} href="/join">Apply for Membership</Button>
               <Button as={Link} href="/partners" variant="secondary">Partner with Vet Gang</Button>
-              <Button as={Link} href="/network" variant="ghost">Explore Network Model</Button>
+              <Button as={Link} href="/network" variant="ghost">Explore the Network</Button>
             </div>
             <ul className="grid gap-3 pt-4 sm:grid-cols-3">
               {trustItems.map((item) => (

@@ -11,12 +11,15 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-ink-950/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-ink-950/85 backdrop-blur-xl">
       <Container>
         <div className="flex h-16 items-center justify-between lg:h-20">
           <Link href="/" className="flex items-center gap-3 text-white" aria-label="VET GANG home">
-            <Image src="/logo_main.png" alt="Vet Gang logo" width={44} height={44} className="h-11 w-11 rounded-full" priority />
-            <span className="text-sm font-semibold tracking-[0.32em] text-army-khaki sm:text-base">VET GANG</span>
+            <Image src="/logo_main.png" alt="Vet Gang logo" width={44} height={44} className="h-11 w-11 rounded-full border border-white/20" priority />
+            <div className="leading-tight">
+              <span className="block text-sm font-semibold tracking-[0.32em] text-army-khaki sm:text-base">VET GANG</span>
+              <span className="hidden text-[0.62rem] font-medium uppercase tracking-[0.26em] text-white/65 sm:block">Verified veteran-owned network</span>
+            </div>
           </Link>
 
           <div className="hidden items-center gap-8 lg:flex">
@@ -56,7 +59,7 @@ export default function Header() {
               <Nav orientation="column" onNavigate={() => setIsOpen(false)} />
               <div className="grid gap-3">
                 <Button as={Link} href="/join" aria-label="Join VET GANG mobile" className="w-full" onClick={() => setIsOpen(false)}>
-                  Join
+                  Join Vet Gang
                 </Button>
                 <Button
                   as={Link}
@@ -66,7 +69,7 @@ export default function Header() {
                   className="w-full"
                   onClick={() => setIsOpen(false)}
                 >
-                  Partner
+                  Become a Partner
                 </Button>
               </div>
             </div>

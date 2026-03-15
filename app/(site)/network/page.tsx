@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 };
 
 const cards = [
-  "Verified veteran-owned business community",
+  "Verified veteran-owned business ecosystem",
   "Collaboration engine for trusted operators",
   "Opportunity channel for procurement and growth",
   "Credibility multiplier through disciplined alignment",
-  "Partnership ecosystem with national reach",
+  "Partnership system with national reach",
   "Centralized coordination with execution standards",
 ];
 
@@ -29,10 +29,12 @@ export default function NetworkPage() {
         <Container>
           <div className="max-w-3xl space-y-6">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-army-khaki">Network</p>
-            <h1 className="text-display-lg font-semibold text-white sm:text-display-xl">A national veteran-owned network built to move with precision.</h1>
+            <h1 className="text-display-lg font-semibold text-white sm:text-display-xl">
+              A verified national network built for collaboration and execution.
+            </h1>
             <p className="text-body-lg text-white/85">
-              Vet Gang functions as a verification-backed collaboration system that connects veteran-led businesses,
-              strategic partners, and trusted operators into one disciplined channel for growth.
+              Vet Gang connects veteran-owned businesses, mission-aligned partners, and trusted operators in one
+              disciplined channel for growth. The network is built to reduce noise and increase qualified access.
             </p>
           </div>
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -48,10 +50,10 @@ export default function NetworkPage() {
       <section className="py-section pt-0">
         <Container>
           <div className="rounded-card border border-white/10 bg-ink-900/70 p-8 sm:p-10">
-            <h2 className="text-headline-xl font-semibold text-white">Opportunity through alignment.</h2>
+            <h2 className="text-headline-xl font-semibold text-white">Selective by design. Scalable by execution.</h2>
             <p className="mt-4 max-w-3xl text-body-md text-white/75">
-              The network is intentionally selective. By standardizing verification and connection protocols, Vet Gang
-              reduces noise and increases the speed of trusted outcomes.
+              Vet Gang uses verification and standards to protect network integrity. That discipline helps serious
+              organizations move faster with higher trust and clearer outcomes.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button as={Link} href="/join">Join the Network</Button>

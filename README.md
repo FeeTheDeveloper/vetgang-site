@@ -1,15 +1,51 @@
-# VET GANG — Airspace Guard (Next.js App Router)
+# Vet Gang Site
 
-A Vercel-safe, cinematic WebGL flagship site for VET GANG using Next.js App Router, TailwindCSS, and @react-three/fiber.
+Premium flagship website for Vet Gang — a veteran-owned national movement and verified business network.
 
-## Quickstart
+Built to be Vercel-safe, production-ready, and aligned with a disciplined, tactical, high-trust brand system.
+
+## Stack
+
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- Node 20.x
+- Optional AWS DynamoDB intake/admin pipeline
+
+## Brand + Design Direction
+
+- Dark cinematic UI with military-inspired contrast
+- Core palette:
+  - `ink-950` `#050607`
+  - `ink-900` `#0b0d10`
+  - `ink-800` `#12151a`
+  - `army-olive` `#6B8E23`
+  - `army-khaki` `#F0E68C`
+  - `army-burgundy` `#800020`
+  - `army-lime` `#32CD32`
+- Buttons:
+  - `primary` (burgundy + khaki)
+  - `secondary` (khaki outlined/tinted)
+  - `ghost` (low-noise tactical)
+
+## Logo
+
+Official logo asset is:
+
+- `public/logo_main.png`
+
+Used in the site header and footer via `next/image`.
+
+## Local Development
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Build + Deploy
+App runs at `http://localhost:3000`.
+
+## Quality + Build Checks
 
 ```bash
 npm run lint
@@ -17,62 +53,64 @@ npm run build
 npm run start
 ```
 
-Deploy on Vercel with the default Next.js settings (Node 20+).
+## Deployment (Vercel)
 
-## Admin Access
+1. Import or reconnect this repository in Vercel.
+2. Keep default Next.js build settings.
+3. Ensure Node runtime is `20.x`.
+4. Add required environment variables (if using intake/admin APIs).
+5. Deploy.
 
-The intake pipeline stores submissions in DynamoDB and protects the admin review UI with basic auth. Set the following
-environment variables in Vercel (or your local `.env`):  
+## Environment Variables (Intake/Admin)
 
-- `DDB_TABLE_INTAKE`: DynamoDB table name for intake records.
-- `ADMIN_USER`: Basic auth username for `/admin` and `/api/admin/*`.
-- `ADMIN_PASS`: Basic auth password for `/admin` and `/api/admin/*`.
-- `AWS_REGION` (or `AWS_DEFAULT_REGION`): AWS region for DynamoDB.
-- `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY`: IAM credentials with DynamoDB access.
-- `NEXT_PUBLIC_LAUNCH_MODE`: Set to `pre` for pre-launch messaging, otherwise `live`.
+- `DDB_TABLE_INTAKE`
+- `ADMIN_USER`
+- `ADMIN_PASS`
+- `AWS_REGION` (or `AWS_DEFAULT_REGION`)
+- `AWS_ACCESS_KEY_ID`
+- `AWS_SECRET_ACCESS_KEY`
+- `NEXT_PUBLIC_LAUNCH_MODE` (`pre` or `live`)
 
-## Launch checklist
+## Key Routes
 
-- Vercel env vars set (including `NEXT_PUBLIC_LAUNCH_MODE`).
-- AWS permissions verified for intake storage and admin access.
-- Admin credentials confirmed for `/admin`.
-- Intake submissions tested (join + contact).
-- Press assets reviewed and approved.
+- `/` — flagship landing page
+- `/about` — organization positioning
+- `/network` — verified ecosystem model
+- `/join` — membership flow + application form
+- `/partners` — strategic partnership page
+- `/contact` — direct inquiry form
+- `/press/kit` — approved brand assets and messaging
+- `/admin` — protected intake review UI
 
-## Post-launch checklist
+## Project Structure
 
-- Monitor intake volume and response times.
-- Review the admin dashboard daily.
-- Respond to partner inquiries within 24-48 hours.
-
-## Structure
-
-```
+```txt
 app/
   (site)/
     layout.tsx
     page.tsx
+    about/page.tsx
+    network/page.tsx
     join/page.tsx
     partners/page.tsx
-    about/page.tsx
     contact/page.tsx
+    press/kit/page.tsx
+  api/
+  globals.css
 components/
-  background/
-    AirspaceBackground.tsx
-    AirspaceCanvas.tsx
-    layers/
+  site/
   sections/
-    Hero.tsx
+  forms/
   ui/
-    Button.tsx
-    Container.tsx
+  background/
 lib/
-  constants.ts
-  motion.ts
 public/
-  assets/silhouettes/*.svg
+  logo_main.png
+  press/
 ```
 
 ## Notes
-- Background respects `prefers-reduced-motion` and performance tiers.
-- WebGL loads lazily to protect first paint.
+
+- Site metadata and OG image routing are pre-configured.
+- Styling system is centralized in `tailwind.config.ts` and `app/globals.css`.
+- Architecture preserves and upgrades existing repository structure instead of greenfield rebuilding.

@@ -2,20 +2,20 @@ import Container from "@/components/ui/Container";
 
 const items = [
   {
-    title: "Verification as a standard",
-    description: "Every member and partner is reviewed so trust is earned before access is granted.",
+    title: "Verification as baseline",
+    description: "Every member and partner is reviewed, so trust is established before opportunities are routed.",
   },
   {
-    title: "Opportunity channel",
-    description: "Centralized routing for partnerships, procurement, and collaboration across regions.",
+    title: "Centralized access",
+    description: "One disciplined channel for partnerships, procurement, and mission-aligned business growth.",
   },
   {
-    title: "Credibility multiplier",
-    description: "Veteran-owned businesses gain network-level legitimacy through disciplined alignment.",
+    title: "Trusted operator density",
+    description: "A vetted network of veteran-owned leaders built to collaborate quickly and execute reliably.",
   },
   {
-    title: "Execution network",
-    description: "Operators, service providers, and partners aligned to move quickly without friction.",
+    title: "Force multiplier outcomes",
+    description: "Network alignment increases velocity, credibility, and scale for serious organizations.",
   },
 ];
 
@@ -24,8 +24,8 @@ export default function NetworkHighlights() {
     <section className="py-section pt-0" aria-label="Network highlights">
       <Container>
         <div className="space-y-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-army-khaki">Network Value</p>
-          <h2 className="text-headline-xl font-semibold text-white">Why Vet Gang matters at national scale.</h2>
+          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-army-khaki">Network Credibility</p>
+          <h2 className="text-headline-xl font-semibold text-white">Engineered for trust. Structured for growth.</h2>
         </div>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {items.map((item) => (

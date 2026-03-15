@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
 import AirspaceBackground from "@/components/background/AirspaceBackground";
-import {
-  ogImageForTitle,
-  siteDescription,
-  siteKeywords,
-  siteName,
-  siteUrl,
-} from "@/lib/seo";
+import Header from "@/components/site/Header";
+import Footer from "@/components/site/Footer";
+import { ogImageForTitle, siteDescription, siteKeywords, siteName, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -37,9 +33,6 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: [ogImageForTitle(siteName)],
   },
-  other: {
-    "og:site_name": siteName,
-  },
 };
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
@@ -47,7 +40,9 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
     <div className="relative min-h-screen overflow-hidden">
       <AirspaceBackground />
       <div className="relative z-10 flex min-h-screen flex-col">
-        {children}
+        <Header />
+        <div className="flex-1 pt-4 lg:pt-6">{children}</div>
+        <Footer />
       </div>
     </div>
   );

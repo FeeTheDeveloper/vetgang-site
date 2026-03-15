@@ -2,32 +2,52 @@ import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import { ogImageForTitle, siteName } from "@/lib/seo";
 
-const description = "Learn about Vet Gang’s mission to amplify veteran-owned businesses nationwide.";
+const description = "Vet Gang is a veteran-owned national business network engineered for trust, execution, and mission-aligned growth.";
 
 export const metadata: Metadata = {
   title: "About",
   description,
-  openGraph: {
-    title: `About ${siteName}`,
-    description,
-    images: [{ url: ogImageForTitle("About") }],
-  },
-  twitter: {
-    title: `About ${siteName}`,
-    description,
-    images: [ogImageForTitle("About")],
-  },
+  openGraph: { title: `About | ${siteName}`, description, images: [{ url: ogImageForTitle("About") }] },
+  twitter: { title: `About | ${siteName}`, description, images: [ogImageForTitle("About")] },
 };
+
+const pillars = [
+  "Verified veteran-owned credibility",
+  "Disciplined standards and accountability",
+  "National network coordination",
+  "Mission-aligned business growth",
+];
 
 export default function AboutPage() {
   return (
-    <main className="flex-1 py-24">
+    <section className="py-section">
       <Container>
-        <h1 className="text-3xl font-semibold">About VET GANG</h1>
-        <p className="mt-4 max-w-2xl text-sm text-slate-200">
-          A veteran-owned collective built to amplify trusted operators and elite partners.
-        </p>
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="space-y-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-army-khaki">About Vet Gang</p>
+            <h1 className="text-display-lg font-semibold text-white sm:text-display-xl">Veteran-led network infrastructure, built for execution.</h1>
+            <p className="text-body-lg text-white/85">
+              Vet Gang is a veteran-owned national movement and business network that centralizes access, strengthens
+              credibility, and drives real outcomes through disciplined alignment. We are structured to connect verified
+              operators with partners who value trust and performance.
+            </p>
+            <p className="text-body-md text-white/75">
+              This is not a passive directory. It is an active ecosystem for collaboration, procurement readiness,
+              strategic introductions, and mission-aligned growth.
+            </p>
+          </div>
+          <div className="rounded-card border border-white/10 bg-ink-900/70 p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-army-khaki">Core Pillars</p>
+            <ul className="mt-6 space-y-4">
+              {pillars.map((pillar) => (
+                <li key={pillar} className="rounded-2xl border border-white/10 bg-ink-800/70 px-4 py-3 text-sm text-white/85">
+                  {pillar}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </Container>
-    </main>
+    </section>
   );
 }

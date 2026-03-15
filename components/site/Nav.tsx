@@ -3,9 +3,9 @@ import Link from "next/link";
 export const navItems = [
   { label: "About", href: "/about" },
   { label: "Network", href: "/network" },
-  { label: "Partners", href: "/partners" },
-  { label: "Press", href: "/press" },
   { label: "Join", href: "/join" },
+  { label: "Partners", href: "/partners" },
+  { label: "Press Kit", href: "/press/kit" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -24,7 +24,7 @@ export default function Nav({ className, orientation = "row", onNavigate }: NavP
         <Link
           key={item.href}
           href={item.href}
-          className="text-sm font-medium text-white/80 transition hover:text-white"
+          className="text-xs font-semibold uppercase tracking-[0.2em] text-white/75 transition hover:text-army-khaki"
           onClick={onNavigate}
         >
           {item.label}

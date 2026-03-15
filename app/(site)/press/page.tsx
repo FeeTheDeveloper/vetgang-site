@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/site/Header";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { ogImageForTitle, siteName } from "@/lib/seo";
@@ -44,8 +43,7 @@ const quickFacts = [
 export default function PressPage() {
   return (
     <>
-      <Header />
-      <main className="flex flex-1 flex-col pt-24 lg:pt-28">
+      <main className="flex flex-1 flex-col">
         <section className="py-section">
           <Container>
             <div className="max-w-2xl space-y-6">

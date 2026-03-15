@@ -15,15 +15,15 @@ export default function HomePage() {
       <NetworkHighlights />
       <CTASection
         eyebrow="Membership"
-        title="Join a verified network that executes."
-        description="Membership is built for veteran-owned businesses and operators committed to disciplined standards, trusted collaboration, and mission-aligned growth."
+        title="Join a verified network that rewards disciplined execution."
+        description="Membership is built for veteran-owned businesses and operators committed to high standards, trusted collaboration, and mission-aligned growth."
         primary={{ label: "Join Vet Gang", href: "/join" }}
         secondary={{ label: "Learn About Vet Gang", href: "/about" }}
       />
       <CTASection
         eyebrow="Partnerships"
         title="Build with trusted veteran operators at scale."
-        description="Vet Gang gives organizations centralized access to verified businesses and proven leadership teams ready for serious execution."
+        description="Vet Gang gives organizations centralized access to verified businesses and proven leadership teams ready for elite partnerships."
         primary={{ label: "Partner with Vet Gang", href: "/partners" }}
         secondary={{ label: "Contact Team", href: "/contact" }}
       />

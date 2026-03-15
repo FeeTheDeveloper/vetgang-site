@@ -25,11 +25,13 @@ export default function AboutPage() {
         <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="space-y-6">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-army-khaki">About Vet Gang</p>
-            <h1 className="text-display-lg font-semibold text-white sm:text-display-xl">Veteran-led network infrastructure, built for execution.</h1>
+            <h1 className="text-display-lg font-semibold text-white sm:text-display-xl">
+              Veteran-led infrastructure for high-trust growth.
+            </h1>
             <p className="text-body-lg text-white/85">
-              Vet Gang is a veteran-owned national movement and business network that centralizes access, strengthens
-              credibility, and drives real outcomes through disciplined alignment. We are structured to connect verified
-              operators with partners who value trust and performance.
+              Vet Gang is a veteran-owned national movement and business network built for organizations that value
+              trust, speed, and disciplined execution. We centralize access between verified operators and partners who
+              need reliable performance.
             </p>
             <p className="text-body-md text-white/75">
               This is not a passive directory. It is an active ecosystem for collaboration, procurement readiness,
@@ -37,7 +39,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="rounded-card border border-white/10 bg-ink-900/70 p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-army-khaki">Core Pillars</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-army-khaki">Core pillars</p>
             <ul className="mt-6 space-y-4">
               {pillars.map((pillar) => (
                 <li key={pillar} className="rounded-2xl border border-white/10 bg-ink-800/70 px-4 py-3 text-sm text-white/85">

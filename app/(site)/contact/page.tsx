@@ -26,8 +26,8 @@ export default function ContactPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.4em] text-army-khaki">Contact</p>
               <h1 className="text-display-lg font-semibold text-white sm:text-display-xl">Direct line to the Vet Gang team.</h1>
               <p className="text-body-md text-white/80">
-                Send partnership inquiries, media requests, or operational questions. We route each message to the
-                correct leadership channel and respond with clear next steps.
+                Send partnership, media, or operational inquiries. We route each message to the correct channel and
+                respond with clear next steps.
               </p>
             </div>
             <div className="rounded-card border border-white/10 bg-ink-900/60 p-6 shadow-card sm:p-8">

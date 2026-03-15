@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import AirspaceBackground from "@/components/background/AirspaceBackground";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
+import IntroSplash from "@/components/site/IntroSplash";
 import { ogImageForTitle, siteDescription, siteKeywords, siteName, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -38,6 +39,7 @@ export const metadata: Metadata = {
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative min-h-screen overflow-hidden">
+      <IntroSplash />
       <AirspaceBackground />
       <div className="relative z-10 flex min-h-screen flex-col">
         <Header />

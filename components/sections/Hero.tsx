@@ -14,7 +14,7 @@ export default function Hero() {
           <div className="relative max-w-3xl space-y-6">
             <p className="text-xs font-semibold uppercase tracking-[0.42em] text-army-khaki">Veteran-Owned National Movement</p>
             <h1 className="text-display-xl font-semibold tracking-tight text-white sm:text-display-2xl">
-              The flagship network for disciplined veteran-led execution.
+              The flagship network for <span className="brand-underline brand-underline-accent pb-2">Veteran-Owned Network</span> and <span className="brand-underline pb-2">Elite Partnerships</span> built for <span className="brand-underline brand-underline-subtle pb-2">Execution</span>.
             </h1>
             <p className="max-w-2xl text-body-lg text-white/85">
               Vet Gang connects verified veteran-owned businesses, trusted operators, and mission-aligned partners in one

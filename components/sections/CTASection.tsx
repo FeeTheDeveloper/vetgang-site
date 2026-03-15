@@ -18,7 +18,7 @@ export default function CTASection({ eyebrow, title, description, primary, secon
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="space-y-4">
               <p className="text-xs font-semibold uppercase tracking-[0.4em] text-army-khaki">{eyebrow}</p>
-              <h2 className="text-headline-xl font-semibold text-white">{title}</h2>
+              <h2 className="brand-underline brand-underline-subtle pb-2 text-headline-xl font-semibold text-white">{title}</h2>
               <p className="max-w-2xl text-body-md text-white/80">{description}</p>
             </div>
             <div className="flex flex-wrap gap-3">

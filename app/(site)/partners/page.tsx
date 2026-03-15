@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import PartnerForm from "@/components/forms/PartnerForm";
 import { ogImageForTitle, siteName } from "@/lib/seo";
 
 const description = "Partner with Vet Gang for trusted access to verified veteran-owned businesses and disciplined execution teams.";
@@ -49,15 +50,19 @@ export default function PartnersPage() {
 
       <section className="py-section pt-0">
         <Container>
-          <div className="rounded-card border border-army-khaki/20 bg-gradient-to-r from-ink-900 to-ink-800 p-8 sm:p-12">
-            <h2 className="text-headline-xl font-semibold text-white">Start a strategic partnership conversation.</h2>
-            <p className="mt-4 max-w-3xl text-body-md text-white/75">
-              We align the right veteran-owned operators, capabilities, and relationship pathways around your
-              objective—with higher trust and less wasted motion.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button as={Link} href="/contact">Contact Vet Gang</Button>
-              <Button as={Link} href="/network" variant="secondary">Review Network</Button>
+          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+            <div className="space-y-5">
+              <h2 className="text-headline-xl font-semibold text-white">Start a strategic partnership conversation.</h2>
+              <p className="max-w-3xl text-body-md text-white/75">
+                We align the right veteran-owned operators, capabilities, and relationship pathways around your
+                objective—with higher trust and less wasted motion.
+              </p>
+              <Button as={Link} href="/network" variant="secondary">
+                Review Network
+              </Button>
+            </div>
+            <div className="rounded-card border border-white/10 bg-ink-900/60 p-6 shadow-card sm:p-8">
+              <PartnerForm />
             </div>
           </div>
         </Container>

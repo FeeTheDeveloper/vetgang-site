@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Header from "@/components/site/Header";
 import Container from "@/components/ui/Container";
 import { ogImageForTitle, siteName } from "@/lib/seo";
 
@@ -28,8 +27,7 @@ export const metadata: Metadata = {
 export default function LaunchPage() {
   return (
     <>
-      <Header />
-      <main className="flex flex-1 flex-col pt-24 lg:pt-28">
+      <main className="flex flex-1 flex-col">
         <section className="py-section">
           <Container>
             <div className="max-w-3xl space-y-6">

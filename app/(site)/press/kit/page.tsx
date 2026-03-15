@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Header from "@/components/site/Header";
 import Container from "@/components/ui/Container";
 import DownloadCard from "@/components/press/DownloadCard";
 import { ogImageForTitle, siteName } from "@/lib/seo";
@@ -37,6 +36,11 @@ const downloads = [
     description: "Combined symbol + wordmark lockup for press coverage.",
     href: "/press/vetgang-lockup.svg",
   },
+  {
+    title: "Primary Logo (PNG)",
+    description: "Official Vet Gang primary logo for digital use.",
+    href: "/logo_main.png",
+  },
 ];
 
 const brandLanguage = [
@@ -59,8 +63,6 @@ const values = ["Discipline", "Loyalty", "Service", "Execution"];
 export default function PressKitPage() {
   return (
     <>
-      <Header />
-      <main className="flex flex-1 flex-col pt-24 lg:pt-28">
         <section className="py-section">
           <Container>
             <div className="max-w-2xl space-y-6">
@@ -135,7 +137,6 @@ export default function PressKitPage() {
             </div>
           </Container>
         </section>
-      </main>
     </>
   );
 }

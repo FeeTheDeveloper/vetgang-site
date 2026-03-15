@@ -15,8 +15,10 @@ export default {
       fontSize: {
         "display-2xl": ["3.75rem", { lineHeight: "1.02", letterSpacing: "-0.02em" }],
         "display-xl": ["3.25rem", { lineHeight: "1.05", letterSpacing: "-0.02em" }],
-        "headline-xl": ["2.25rem", { lineHeight: "1.1", letterSpacing: "-0.01em" }],
-        "headline-lg": ["1.75rem", { lineHeight: "1.2", letterSpacing: "-0.01em" }],
+        "display-lg": ["2.5rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+        "headline-xl": ["2.1rem", { lineHeight: "1.15", letterSpacing: "-0.01em" }],
+        "headline-lg": ["1.7rem", { lineHeight: "1.2", letterSpacing: "-0.01em" }],
+        "headline-md": ["1.35rem", { lineHeight: "1.35" }],
         "body-lg": ["1.125rem", { lineHeight: "1.65" }],
         "body-md": ["1rem", { lineHeight: "1.6" }],
         "body-sm": ["0.9375rem", { lineHeight: "1.6" }],
@@ -31,9 +33,15 @@ export default {
         ink: {
           950: "#050607",
           900: "#0b0d10",
-          800: "#12151a"
-        }
-      }
+          800: "#12151a",
+        },
+        army: {
+          olive: "#6B8E23",
+          khaki: "#F0E68C",
+          burgundy: "#800020",
+          lime: "#32CD32",
+        },
+      },
     },
   },
   plugins: [],

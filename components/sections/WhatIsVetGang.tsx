@@ -22,7 +22,7 @@ export default function WhatIsVetGang() {
         <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start">
           <div className="max-w-md space-y-6">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-300">What is VET GANG</p>
-            <h2 className="text-headline-xl font-semibold text-white">
+            <h2 className="brand-underline brand-underline-subtle pb-2 text-headline-xl font-semibold text-white">
               Not a directory — a force multiplier.
             </h2>
             <p className="text-body-md text-slate-200">

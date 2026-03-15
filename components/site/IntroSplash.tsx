@@ -145,6 +145,16 @@ export default function IntroSplash() {
           Verified. Veteran-Owned. Built for Execution.
         </p>
 
+        <p
+          className={[
+            "mt-5 text-lg font-semibold uppercase tracking-[0.34em] text-army-khaki sm:text-xl",
+            "brand-underline brand-underline-accent brand-underline-reveal pb-2",
+            state === "visible" ? "is-active" : "",
+          ].join(" ")}
+        >
+          VET GANG
+        </p>
+
         <Button
           type="button"
           variant="secondary"

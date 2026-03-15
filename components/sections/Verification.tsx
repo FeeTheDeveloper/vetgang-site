@@ -24,7 +24,7 @@ export default function Verification() {
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-6">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-300">Verification</p>
-            <h2 className="text-headline-xl font-semibold text-white">Trust is earned, not assumed.</h2>
+            <h2 className="brand-underline brand-underline-subtle pb-2 text-headline-xl font-semibold text-white">Trust is earned, not assumed.</h2>
             <p className="max-w-2xl text-body-md text-slate-200">
               Every member and partner passes a clear verification pipeline. We keep the standard high so collaboration
               stays decisive, respectful, and mission-aligned.

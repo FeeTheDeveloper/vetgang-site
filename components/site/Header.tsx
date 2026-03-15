@@ -14,10 +14,12 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-ink-950/85 backdrop-blur-xl">
       <Container>
         <div className="flex h-16 items-center justify-between lg:h-20">
-          <Link href="/" className="flex items-center gap-3 text-white" aria-label="VET GANG home">
+          <Link href="/" className="group flex items-center gap-3 text-white" aria-label="VET GANG home">
             <Image src="/logo_main.png" alt="Vet Gang logo" width={44} height={44} className="h-11 w-11 rounded-full border border-white/20" priority />
             <div className="leading-tight">
-              <span className="block text-sm font-semibold tracking-[0.32em] text-army-khaki sm:text-base">VET GANG</span>
+              <span className="brand-underline brand-underline-subtle brand-underline-hover brand-underline-faint block pb-2 text-sm font-semibold tracking-[0.32em] text-army-khaki sm:text-base">
+                VET GANG
+              </span>
               <span className="hidden text-[0.62rem] font-medium uppercase tracking-[0.26em] text-white/65 sm:block">Verified veteran-owned network</span>
             </div>
           </Link>

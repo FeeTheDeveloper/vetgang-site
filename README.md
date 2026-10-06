@@ -1,6 +1,8 @@
 # Vet Gang Site
 
-Official Next.js 14 website for Vet Gang — a veteran-owned national movement and verified business network.
+Next.js 14 presentation site for Vet Gang, with community, opportunity, and member-experience foundations. Current ownership, membership, partner, and network claims require authoritative verification.
+
+[Portfolio evidence and truth boundary](docs/PORTFOLIO_CASE_STUDY.md)
 
 This repository is structured for reliable local development and clean Vercel deployments with minimal setup friction.
 
